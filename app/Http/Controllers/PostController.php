@@ -30,7 +30,7 @@ class PostController extends Controller
     //stripe
     public function stripe()
     {
-        return view('todo.stripe');
+        return view('stripe');
     }
     /**
      * Show the form for creating a new resource.
