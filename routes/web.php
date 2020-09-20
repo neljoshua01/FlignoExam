@@ -15,7 +15,6 @@ use Illuminate\Http\Request;
 */
 // use App\Http\Controllers\PostController;
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\ChatsController;
 
 Route::get('/', [App\Http\Controllers\PostController::class, 'index']);
 Route::get('/stripe', [PostController::class, 'stripe']);
@@ -23,7 +22,9 @@ Route::resource('Todo', 'App\Http\Controllers\PostController');
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/chat', 'App\Http\Controllers\PagesController@chat');
+Route::get('/chat', [App\Http\Controllers\ChatController::class, 'index']);
+Route::get('messages/index', [App\Http\Controllers\ChatController::class, 'getMessage'])->name('message');
+Route::post('message', [App\Http\Controllers\ChatController::class, 'sendMessage']);
 
 Route::get('/stripe', function(){
     return view('stripe');
