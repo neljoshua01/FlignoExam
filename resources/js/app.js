@@ -13,4 +13,4 @@ require('./bootstrap');
  */
 import 'bootstrap/dist/css/bootstrap.css';
 
-require('./components/Example');
+require('./components/App');

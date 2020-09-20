@@ -12,6 +12,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/stripe">StripePayment</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/chat">Chat</a>
+      </li>
     </ul>
     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->

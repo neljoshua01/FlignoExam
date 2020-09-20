@@ -13,16 +13,17 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// use App\Http\Controllers\PostController;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ChatsController;
 
-use App\Http\Controllers\PostController;
-
-Route::get('/', [PostController::class, 'index']);
+Route::get('/', [App\Http\Controllers\PostController::class, 'index']);
+Route::get('/stripe', [PostController::class, 'stripe']);
 Route::resource('Todo', 'App\Http\Controllers\PostController');
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/stripe', [PostController::class, 'stripe']);
+Route::get('/chat', 'App\Http\Controllers\PagesController@chat');
 
 Route::get('/stripe', function(){
     return view('stripe');
