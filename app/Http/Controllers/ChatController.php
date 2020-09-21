@@ -30,7 +30,7 @@ class ChatController extends Controller
             $query->where('from', $user_id)->where('to', $my_id);
         })->get();
 
-        return view('messages.index')->with('messages',$messages);
+        return view('todo.index')->with('messages',$messages);
     }
 
     public function sendMessage(Request $request)

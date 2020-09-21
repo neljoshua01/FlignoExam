@@ -22,9 +22,17 @@ Route::resource('Todo', 'App\Http\Controllers\PostController');
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/sendmail', 'App\Http\Controllers\SendEmailController@index');
+Route::post('/sendmail/send', 'App\Http\Controllers\SendEmailController@send');
+
+
 Route::get('/chat', [App\Http\Controllers\ChatController::class, 'index']);
-Route::get('messages/index', [App\Http\Controllers\ChatController::class, 'getMessage'])->name('message');
-Route::post('message', [App\Http\Controllers\ChatController::class, 'sendMessage']);
+Route::get('chat/messages/{id}', [App\Http\Controllers\ChatController::class, 'getMessage'])->name('message');
+Route::post('chat', [App\Http\Controllers\ChatController::class, 'sendMessage']);
+
+Route::get('/map', function(){
+    return view('map');
+});
 
 Route::get('/stripe', function(){
     return view('stripe');

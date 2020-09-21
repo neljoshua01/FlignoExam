@@ -18,6 +18,21 @@
 
     <!-- Styles -->
     <style>
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #a7a7a7;
+        }
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #929292;
+        }
       ul{
         margin: 0px;
         padding: 0px;
@@ -153,13 +168,13 @@
         });
         $(document).on('keyup', '.input-text input', function (e) {
             var message = $(this).val();
-            // check if enter key is pressed and message is not null also receiver is selected
-            if (e.keyCode == 13 && message != '' && receiver_id != '') {
-                $(this).val(''); // while pressed enter text box will be empty
+            
+            if (e.keyCode == 13 && message '!=' '' && receiver_id '!=' '') {
+                $(this).val(''); 
                 var datastr = "receiver_id=" + receiver_id + "&message=" + message;
                 $.ajax({
                     type: "post",
-                    url: "message", // need to create this post route
+                    url: "message", 
                     data: datastr,
                     cache: false,
                     success: function (data) {

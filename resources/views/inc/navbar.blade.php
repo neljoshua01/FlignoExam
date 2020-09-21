@@ -14,6 +14,11 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/chat">Chat</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/map">Mapview</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sendmail">Support</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
